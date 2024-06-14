@@ -6,6 +6,12 @@ public class Main {
     static void insertValues(int[][] matrix, int numberRow, int numberCol){
         for (int x = 0; x< numberRow; x++){
             for(int y = 0; y< numberCol; y++){
+
+                if(!input.hasNextInt()){ // validate inputs
+                    System.out.println("the value you entered on index (" + x + "," + y + ") is not a number!"  );
+                    input.next();
+                }
+
                 matrix[x][y] = input.nextInt();
             }
         }
@@ -32,7 +38,7 @@ public class Main {
                     min = a[x][maxCol];
                 }
             }
-
+            System.out.println(max + " " + min);
             if (max == min) {
                 for (int j = 0; j< col; j++) {
                     if(maxCol != j && a[i][j] == max){
